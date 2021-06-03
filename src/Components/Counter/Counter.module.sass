@@ -1,0 +1,68 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+%column-SE
+  display: flex
+  flex-flow: column nowrap
+  justify-content: space-evenly
+  padding: 10px
+
+header 
+  margin-bottom: 50px
+  font-size: 30px
+  text-transform: uppercase
+
+.counterWrapper
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-flow: column nowrap
+  width: 100%
+  height: 100vh
+
+main
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  border-radius: 15px
+  overflow: hidden
+  width: 80%
+  height: 30%
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2)
+
+.counterSection
+  @extend %column-SE
+  flex-grow: 2
+  background-color: #00b4e5
+
+.counterValue
+  font-size: 80px
+  text-align: center
+
+.counterBtnWrapper
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+
+.settingsSection
+  @extend %column-SE
+  flex-grow: 1
+  background-color: #00a2ce
+  .inputBlock
+    font-size: 30px
+    width: 100%
+    display: flex
+    padding: 0 50px
+    justify-content: space-between
+    input
+      font-size: inherit
+      padding: 5px 10px
+      border-radius: 5px
+      border: none
+      width: 100px
+    span
+      width: 100px
+
+
