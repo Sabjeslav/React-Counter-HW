@@ -32,12 +32,14 @@ function Counter() {
   }, [counter, incMode, step]);
 
   const stepInputValidator = ({ target: { value } }) => {
-    if (value < 0.001 || isNaN(value)) value = 1;
+    if (value < 1 || isNaN(value)) value = 1;
+    if (value > 100) value = 100;
     setStep(Number(value));
   };
 
   const timeoutDelayValidator = ({ target: { value } }) => {
-    if (value < 1 || value > 600 || isNaN(value)) value = 1;
+    if (value < 0.001 || isNaN(value)) value = 1;
+    if (value > 3600) value = 3600;
     setTimeoutDelay(value * 1000);
   };
 
@@ -83,8 +85,8 @@ function Counter() {
             <input
               id="delayInput"
               type="number"
-              min="0.0001"
-              max="100"
+              min="0.001"
+              max="3600"
               step="0.1"
               value={timeoutDelay / 1000}
               onChange={timeoutDelayValidator}
