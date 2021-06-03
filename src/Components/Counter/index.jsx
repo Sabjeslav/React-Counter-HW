@@ -43,9 +43,14 @@ function Counter() {
     setTimeoutDelay(value * 1000);
   };
 
+  const resetCounter = () => {
+    setCounter(0);
+  }
+
   const autoClickHandler = () => {
     setAutoClick(!autoClick);
   };
+
   useEffect(() => {
     let timeout = null;
     if (autoClick) {
@@ -66,6 +71,7 @@ function Counter() {
             <Button caption={action.caption} handler={action.function} />
             <Button caption="Change counter mode" handler={toggleCounterMode} />
             <Button caption="Auto Click" handler={autoClickHandler} />
+            <Button caption="Reset" handler={resetCounter} />
           </div>
         </div>
         <div className={style.settingsSection}>
